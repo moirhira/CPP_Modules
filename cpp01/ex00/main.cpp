@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 22:30:36 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/10 22:10:03 by moirhira         ###   ########.fr       */
+/*   Created: 2025/11/15 16:04:21 by moirhira          #+#    #+#             */
+/*   Updated: 2025/11/15 17:15:31 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-#define MAIN_H
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
 
-#endif
+int main() {
+        Zombie* z = newZombie("simo");
+        z->announce();
+        delete z;
+        randomChump("Foo");
+}

@@ -1,5 +1,5 @@
-NAME		= account
-SRC		= Account.cpp tests.cpp
+NAME		= zombie
+SRC		= main.cpp newZombie.cpp randomChump.cpp  Zombie.cpp
 OBJ		= $(SRC:.cpp=.o)
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 CPP		= c++
