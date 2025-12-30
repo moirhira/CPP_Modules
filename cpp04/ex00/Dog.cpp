@@ -1,24 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 17:10:26 by moirhira          #+#    #+#             */
-/*   Updated: 2025/12/08 11:51:38 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
 #include "Dog.hpp"
 
 
 Dog::Dog() {
+        std::cout << "Dog created\n";
         type = "Dog";
 }
 
+Dog::Dog(const Dog& other) : Animal(other) {}
+
+Dog& Dog::operator=(const Dog& other) {
+        if (this != &other)
+                Animal::operator=(other);
+        return *this;
+}
+
 Dog::~Dog() {
+        std::cout << "Dog destroyed\n";
 }
 
 void Dog::makeSound() const {

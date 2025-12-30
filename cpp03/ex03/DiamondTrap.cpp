@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 22:20:25 by moirhira          #+#    #+#             */
-/*   Updated: 2025/12/07 12:03:30 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap ()
@@ -26,7 +14,7 @@ DiamondTrap::DiamondTrap(const std::string&  name)
         : ClapTrap( name + "_clap_Name"), FragTrap(name), ScavTrap(name), Name(name)
 {
         this->hitPoints = FragTrap::hitPoints;
-        this->energyPoints = ScavTrap::energyPoints;
+        this->energyPoints = ScavTrap::energyPoints;    
         this->attackDamage = FragTrap::attackDamage;
         std::cout << "DiamondTrap " << Name << " constructed" << std::endl;       
 }

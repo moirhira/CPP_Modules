@@ -1,24 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 21:21:32 by moirhira          #+#    #+#             */
-/*   Updated: 2025/12/08 21:28:30 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() {
         type = "WrongCat";
+        std::cout << "WrongCat created\n";
+}
+
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {}
+
+WrongCat& WrongCat::operator=(const WrongCat& other) {
+        if (this != &other)
+                WrongAnimal::operator=(other);
+        return *this;
 }
 
 WrongCat::~WrongCat() {
-
+        std::cout << "WrongCat destroyed\n";
 }
+
 void WrongCat::makeSound() const {
         std::cout << "Meow from WrongCat" << std::endl;
 }

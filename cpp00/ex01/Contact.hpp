@@ -6,7 +6,7 @@
 /*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 21:29:33 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/11 10:49:05 by moirhira         ###   ########.fr       */
+/*   Updated: 2025/11/15 16:50:34 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CONTACT_HPP
 
 #include <iostream>
-
 
 class Contact {
         private:

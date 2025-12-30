@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:07:00 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/28 15:31:00 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
@@ -25,9 +13,9 @@ int main()
 
     std::cout << "=== Creating ScavTrap ===" << std::endl;
     ScavTrap s1("Scavy");
-    s1.attack("Intruder");        // Overridden attack()
-    s1.takeDamage(20);            // inherited
-    s1.beRepaired(10);            // inherited
+    s1.attack("Intruder");
+    s1.takeDamage(20);
+    s1.beRepaired(10);
     s1.guardGate();
     std::cout << std::endl;
 

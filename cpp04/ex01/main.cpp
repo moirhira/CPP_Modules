@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 17:12:49 by moirhira          #+#    #+#             */
-/*   Updated: 2025/12/09 11:29:23 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
@@ -23,7 +11,7 @@ int main()
 
         const Animal *j = new Dog();
         const Animal *i = new Cat();
-        delete j; // should not create a leak
+        delete j;
         delete i;
 
         
@@ -43,6 +31,7 @@ int main()
 
         Dog basic;
         Dog copy = basic;
-
+        // std::cout << "Basic Brain Address: " << basic.getBrain() << std::endl;
+        // std::cout << "Tmp   Brain Address: " << copy.getBrain() << std::endl;
         return 0;
 }

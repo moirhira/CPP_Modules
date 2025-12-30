@@ -6,7 +6,7 @@
 /*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 21:45:30 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/11 09:11:11 by moirhira         ###   ########.fr       */
+/*   Updated: 2025/11/15 17:16:43 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <string>
+#include <iomanip>
 
 
 class PhoneBook {

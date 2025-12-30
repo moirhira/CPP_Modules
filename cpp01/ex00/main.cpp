@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 16:04:21 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/15 17:15:31 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
 
 int main() {
-        Zombie* z = newZombie("simo");
+        Zombie* z = newZombie("zombie1");
         z->announce();
         delete z;
         randomChump("Foo");

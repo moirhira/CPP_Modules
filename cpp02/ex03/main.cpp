@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moirhira <moirhira@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 22:58:24 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/27 11:27:28 by moirhira         ###   ########.fr       */
+/*   Updated: 2025/12/24 19:39:03 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int main(void)
 {
-        Point a(0, 0);
-    Point b(10, 0);
-    Point c(0, 10);
+    Point a(0, 0);
+    Point b(0, 2);
+    Point c(3, 0);
 
-    Point inside(3, 3);
+    Point inside(1, 1);
     Point outside(20, 20);
-    Point onEdge(5, 0);
+    Point onEdge(1, 0);
 
     std::cout << "inside: " << bsp(a, b, c, inside) << std::endl;
     std::cout << "outside: " << bsp(a, b, c, outside) << std::endl;

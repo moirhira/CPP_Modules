@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 17:12:49 by moirhira          #+#    #+#             */
-/*   Updated: 2025/12/09 12:31:52 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
@@ -24,7 +12,9 @@ int main()
         const Animal *i = new Cat();
         std::cout << j->getType() << " " << std::endl;
         std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); // will output the cat sound!
+        i->makeSound();
         j->makeSound();
+        delete j;
+        delete i;
         return 0;
 }

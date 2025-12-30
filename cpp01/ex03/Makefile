@@ -1,4 +1,4 @@
-NAME		= brain
+NAME		= out
 SRC		= HumanA.cpp HumanB.cpp main.cpp Weapon.cpp  
 OBJ		= $(SRC:.cpp=.o)
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-.%o: .%cpp
+%.o: %.cpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean: 

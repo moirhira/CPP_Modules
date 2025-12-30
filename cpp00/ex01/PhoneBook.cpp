@@ -6,14 +6,12 @@
 /*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 21:46:27 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/11 14:46:01 by moirhira         ###   ########.fr       */
+/*   Updated: 2025/11/15 17:16:40 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include <string>
-#include <iomanip>
 
 int PhoneBook::index = 0;
 

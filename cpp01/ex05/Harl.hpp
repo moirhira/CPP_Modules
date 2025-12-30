@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 14:08:06 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/16 15:48:34 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef HARL_HPP
 #define HARL_HPP
 
 #include <iostream>
-#include <fstream>
+#include <string>
 
 class Harl{
         private:

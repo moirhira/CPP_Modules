@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 14:08:04 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/17 09:40:38 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Harl.hpp"
 
 Harl::Harl() {}
@@ -42,7 +30,7 @@ void Harl::complain( std::string level){
         
         Harlfnt functions[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
         
-        std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROE"};
+        std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
         
         for (int i = 0; i < 4; i++)
         {

@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:06:55 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/28 11:39:25 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -50,32 +37,6 @@ ClapTrap::~ClapTrap()
 {
         std::cout << "ClapTrap " << Name << " has been destroyed!" << std::endl;
 }
-
-
-
-
-
-// std::string ClapTrap::getName() const
-// {
-//         return this->Name;
-// }
-
-
-// int ClapTrap::getHit() const
-// { 
-//         return this->hitPoints;
-// }
-
-
-// int ClapTrap::getEnergy() const
-// {
-//         return this->energyPoints;
-// }
-
-
-// int ClapTrap::getAttackDamage() {
-//         return this->attackDamage;
-// }
 
 
 

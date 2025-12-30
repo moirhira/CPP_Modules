@@ -1,33 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 19:12:26 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/15 22:43:33 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-
-int main(){
-        Weapon ak("AK47");
-
-        HumanA simo("simo", ak);
-        simo.attack();
-        ak.setType("AK48");
-        simo.attack();
-        
-        HumanB salma("salma");
-        salma.attack();
-        
-        Weapon katana("katana");
-        salma.setWeapon(katana);
-        salma.attack();
-        katana.setType("katana chinese");
-        salma.attack();
+int main()
+{
+        {
+                Weapon club = Weapon("crude spiked club");
+                HumanA bob("Bob", club);
+                bob.attack();
+                club.setType("some other type of club");
+                bob.attack();
+        }
+        {
+                Weapon club = Weapon("crude spiked club");
+                HumanB jim("Jim");
+                jim.setWeapon(club);
+                jim.attack();
+                club.setType("some other type of club");
+                jim.attack();
+        }
+        return 0;
 }

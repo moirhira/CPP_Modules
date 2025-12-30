@@ -2,24 +2,22 @@ NAME = Fixed
 CPP = c++ 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-
 SRC = main.cpp Fixed.cpp
 OBJ = main.o Fixed.o
-
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CPP) $(FLAGS) -o $@ $^
+    $(CPP) $(FLAGS) -o $@ $^
 
 %.o: %.cpp Fixed.hpp
-	$(CPP) $(FLAGS) -c $< -o $@
+    $(CPP) $(FLAGS) -c $< -o $@
 
-clean: 
-	rm -f $(OBJ)
+clean:
+    rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+    rm -f $(NAME)
 
 re: fclean all
 

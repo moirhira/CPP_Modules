@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moirhira <moirhira@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 22:36:10 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/26 09:50:07 by moirhira         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:29:48 by moirhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int Fixed::getRawBits( void ) const {
 void Fixed::setRawBits( int const raw ) {
         this->value = raw;
 }
-
-
 
 float Fixed::toFloat( void ) const {
         float f_number = (float)this->value / (1 << number_frc);

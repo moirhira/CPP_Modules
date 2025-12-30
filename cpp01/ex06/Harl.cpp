@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moirhira <moirhira@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 14:08:04 by moirhira          #+#    #+#             */
-/*   Updated: 2025/11/19 21:09:02 by moirhira         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Harl.hpp"
 
 Harl::Harl() {}
@@ -83,7 +71,7 @@ void Harl::complain( std::string level)
                         break;
                 }
                 default:
-                        std::cout << "[ A NOT VALID LEVEL ]" << std::endl;
+                        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
                         break;
         }
         
