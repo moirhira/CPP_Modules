@@ -7,7 +7,7 @@ int main() {
         Bureaucrat b;
         std::cout << b << std::endl;
         b.incrementGrade();
-                std::cout << b << std::endl;
+        std::cout << b << std::endl;
 
     }
     catch (std::exception & e)
