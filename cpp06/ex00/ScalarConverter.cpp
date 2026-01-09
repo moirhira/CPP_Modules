@@ -1,6 +1,15 @@
 #include "ScalarConverter.hpp"
 
 
+ScalarConverter::ScalarConverter() {}
+ScalarConverter::ScalarConverter(const ScalarConverter &other) {(void)other;}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other) {
+    (void)other;
+    return *this;
+}
+ScalarConverter::~ScalarConverter() {}
+
+
 static void printOutput(char c, int i, float f, double d, bool imp_char, bool imp_int) {
     if (imp_char)
         std::cout << "char: impossible" << std::endl;
