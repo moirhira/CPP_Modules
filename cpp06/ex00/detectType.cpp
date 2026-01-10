@@ -73,6 +73,8 @@ int detectDouble(const std::string & s) {
 
 
 int detectType(const std::string & s) {
+    if (s.length() == 0)
+        return -1;
     if (detectSpecialType(s))
         return 0;
     else if (detectChar(s))
@@ -86,3 +88,9 @@ int detectType(const std::string & s) {
     else 
         return -1;
 }
+
+
+
+
+// static cast its like you take abook in english and translete it to french 
+// reintrpret cats like you take a book and place a sticker in front say read in french even if its in english 

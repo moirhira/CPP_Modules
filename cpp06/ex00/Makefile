@@ -1,8 +1,8 @@
 NAME		= convert
-SRC		= 	main.cpp ScalarConverter.cpp detectType.cpp
-OBJ		= $(SRC:.cpp=.o)
+SRC			= 	main.cpp ScalarConverter.cpp detectType.cpp
+OBJ			= $(SRC:.cpp=.o)
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-CXX		= c++
+CXX			= c++
 
 
 all: $(NAME)
@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp %.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean: 
