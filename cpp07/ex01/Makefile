@@ -1,4 +1,4 @@
-NAME		= iter
+NAME		= temp
 SRC			= 	main.cpp
 OBJ			= $(SRC:.cpp=.o)
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -7,7 +7,7 @@ CXX			= c++
 
 all: $(NAME)
 
-$(NAME): $(OBJ) 
+$(NAME): $(OBJ) iter.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp %.hpp
