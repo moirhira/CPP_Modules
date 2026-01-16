@@ -5,7 +5,7 @@
 
 
 template <typename T>
-void iter(T *arr , size_t len, void (*f)(T &))
+void iter(T *arr ,const  size_t len, void (*f)(T &))
 {
     if (!arr || !f)
         return;
@@ -19,7 +19,7 @@ void iter(T *arr , size_t len, void (*f)(T &))
 
 
 template <typename T>
-void iter(const T *arr, size_t len, void (*f)(const T &))
+void iter(const T *arr, const size_t len, void (*f)(const T &))
 {
     if (!arr || !f)
         return;
