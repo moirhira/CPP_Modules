@@ -2,6 +2,7 @@
 #include <exception>
 #include <algorithm>
 
+
 class NotFoundException : public std::exception {
 
     const char * what() const throw ();
