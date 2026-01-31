@@ -7,7 +7,7 @@ CXX			= c++
 
 all: $(NAME)
 
-$(NAME): $(OBJ) easyfind.hpp
+$(NAME): $(OBJ) BitcoinExchange.hpp
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp %.hpp

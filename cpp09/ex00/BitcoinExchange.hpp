@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
-
+#include <fstream>
 
 class BitcoinExchange {
     private:
