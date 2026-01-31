@@ -1,12 +1,14 @@
 #include <map>
 #include <string>
+#include <iostream>
+#include <exception>
 
 
 class BitcoinExchange {
     private:
         std::map<std::string, float> _database;
     public:
-    BitcoinExchange(const std::map<std::string, float> & data);
+    BitcoinExchange();
     BitcoinExchange(const BitcoinExchange & other);
     BitcoinExchange& operator=(const BitcoinExchange & other);
     ~BitcoinExchange();

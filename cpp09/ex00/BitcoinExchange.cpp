@@ -1,7 +1,9 @@
 #include "BitcoinExchange.hpp"
 
 
-BitcoinExchange::BitcoinExchange(const std::map<std::string, float> & data) : _database(data){}
+BitcoinExchange::BitcoinExchange() {
+    this->laodDatabase("data-csv");
+}
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange & other) : _database(other._database) {}
 
