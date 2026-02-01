@@ -64,9 +64,32 @@ void BitcoinExchange::pocessInput(const std::string& filename) {
         std::string date_v = trim(line.substr(0, pipe_v));
         std::string value_v = trim(line.substr(pipe_v + 1));
         
+        //----------------------------------------
+
+
 
         if (std::count(date_v.begin(), date_v.end(), '-') != 2)
             throw std::runtime_error("Error: bad inppput.");
+
+        std::string year_v = date_v.substr(0, 4);
+        std::string month_v = date_v.substr(5, 2);
+        std::string day_v = date_v.substr(8, 2);
+
+        if (year_v < "2009" || year_v > "2022")
+            throw std::runtime_error("Error: invalid date YEAR.");
+
+        if (month_v < "01" || month_v > "12")
+            throw std::runtime_error("Error: invalid date MONTH.");
+
+        if (day_v < "01" || day_v > "30")
+            throw std::runtime_error("Error: invalid date DAY.");
+
+        
+        
+
+        //-----------------------------------------
+        if (month_v > "12")
+                throw std::runtime_error("Error: not a positive number.");
         
         std::cout << date_v <<  " => " << value_v << " = " << std::endl;
 
