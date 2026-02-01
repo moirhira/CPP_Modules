@@ -1,0 +1,100 @@
+Workshop Title
+
+DevOps Workshop
+
+Objective
+
+The objective of this workshop is to introduce 1337 students to DevOps principles, infrastructure fundamentals, and cloud-oriented thinking, which are currently underrepresented in the Common Core curriculum.
+
+Many students focus primarily on application-level development (web or mobile) without a clear understanding of how software behaves in real production environments. This workshop aims to bridge that gap by exposing participants to:
+
+Infrastructure concepts
+
+Containerization and orchestration
+
+Monitoring and observability tools
+
+By acquiring this knowledge early, students will be better prepared to adapt to current market expectations, where DevOps and infrastructure awareness have become essential skills for modern developers, regardless of their specialization.
+
+Proposed Dates and Duration
+
+From 13/02/2026 to 16/02/2026
+
+Educational activities: 2 full days
+
+Arrival and departure days included for logistics and accommodation
+
+Workshop Format
+
+The workshop will follow a hybrid format, combining:
+
+Technical talks and live demonstrations
+
+Hands-on practical labs
+
+Interactive correction, discussion, and Q&A sessions with experienced guests
+
+This approach ensures both conceptual understanding and practical skill acquisition.
+
+Detailed Schedule
+Day 1 – Friday, 13/02/2026 (Arrival Day)
+
+Arrival of participants from other campuses
+
+Accommodation check-in
+
+Distribution of workshop goodies (details provided in a later section)
+
+Day 2 – Saturday, 14/02/2026 (Docker & Fundamentals)
+
+10:00 – 12:00 | Kick-off Session (Agora)
+
+Introductory talk on DevOps culture and infrastructure fundamentals
+
+Live demonstration covering essential Docker concepts
+
+12:00 – 14:00 | Lunch Break
+
+14:00 – 18:00 | Hands-on Lab Session (C1)
+
+Practical exercises focused on containerization and real-world use cases
+
+18:30 – 20:30 | Correction & Discussion Session
+
+Review of student solutions
+
+Open discussion on challenges encountered
+
+Insights and feedback from expert guests
+
+Day 3 – Sunday, 15/02/2026 (Kubernetes & Observability)
+
+Morning Session | Technical Talk
+
+Introduction to Kubernetes
+
+Overview of monitoring and observability tools: Prometheus and Grafana
+
+12:00 – 14:00 | Lunch Break
+
+14:00 – 18:00 | Hands-on Lab Session
+
+Deployment and orchestration scenarios
+
+Monitoring application behavior and infrastructure metrics
+
+18:30 – 20:30 | Final Correction, Q&A & Closing Talk
+
+Final review and questions
+
+Key takeaways
+
+Workshop closing remarks
+
+Day 4 – Monday, 16/02/2026 (Departure Day)
+
+Check-out and departure of participants from other campuses
+
+Target Audience
+
+This workshop is primarily targeted at students currently in the Common Core, who will benefit most from early exposure to DevOps and infrastructure concepts.

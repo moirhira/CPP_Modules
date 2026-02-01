@@ -1,8 +1,8 @@
 #include "BitcoinExchange.hpp"
-
+#include <cstdlib> 
 
 BitcoinExchange::BitcoinExchange() {
-    this->laodDatabase("data.csv");
+    this->loadDatabase("data.csv");
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange & other) : _database(other._database) {}
@@ -15,15 +15,20 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange & other) {
 
 BitcoinExchange::~BitcoinExchange() {}
 
-void BitcoinExchange::laodDatabase(const std::string& filename) {
+void BitcoinExchange::loadDatabase(const std::string& filename) {
     std::ifstream datafile(filename.c_str());
     if (!datafile.is_open()) {
-        std::cerr << "Error: at opening the file." << std::endl;
-        return;
+        throw std::runtime_error("Error: at opening the file.");
     }
     std::string line;
+    std::getline(datafile, line);
     while (std::getline(datafile, line)) {
-        std::cout << line << std::endl;
+        size_t coma = line.find(',');
+
+        std::string date_v = line.substr(0, coma);
+        std::string rateStr = line.substr(coma + 1);
+        float rate = std::strtof(rateStr.c_str(), NULL);
+        _database[date_v] = rate;
     }
     datafile.close();
 }

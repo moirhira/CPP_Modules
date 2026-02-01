@@ -13,7 +13,7 @@ class BitcoinExchange {
     BitcoinExchange& operator=(const BitcoinExchange & other);
     ~BitcoinExchange();
 
-    void laodDatabase(const std::string& filename);
+    void loadDatabase(const std::string& filename);
     void pocessInput(const std::string& filename);
 
 };
