@@ -47,6 +47,21 @@ std::string trim(const std::string& str) {
     return str.substr(start, end - start);
 }
 
+bool isValidDate(const std::string& date)
+{
+    if (date.length() != 10 || date[4] != '-' || date[7] != '-')
+        return false;
+    
+
+    int year_v = std::atoi(date.substr(0, 4).c_str());
+    int month_v = std::atoi(date.substr(5, 2).c_str());
+    int day_v = std::atoi(date.substr(8, 2).c_str());
+
+    if (year_v < 2009 || month_v < 1 || month_v > 12 || day_v < 1 || day_v > 31)
+        return false;
+
+    return true;
+}
 void BitcoinExchange::pocessInput(const std::string& filename) {
     std::ifstream inputFile(filename.c_str());
     if (!inputFile.is_open()){
@@ -56,44 +71,54 @@ void BitcoinExchange::pocessInput(const std::string& filename) {
     std::getline(inputFile, line);
     while (std::getline(inputFile, line))
     {
-        size_t pipe_v = line.find('|');
+        if (line.empty())
+            continue;
 
+        size_t pipe_v = line.find('|');
         if (pipe_v == std::string::npos)
-            throw std::runtime_error("Error: bad input.");
+        {
+            std::cerr << "Error: bad input => " << line << std::endl;
+            continue;
+        }
         
         std::string date_v = trim(line.substr(0, pipe_v));
         std::string value_v = trim(line.substr(pipe_v + 1));
         
-        //----------------------------------------
 
+        try {
+            if (!isValidDate(date_v))
+            {
+                std::cerr << "Error: bad input => " << date_v << std::endl;
+                continue;  
+            }
+        }
+        catch (...)
+        {
+            std::cerr << "Error: bad input => " << date_v << std::endl;
+            continue; 
+        }
 
-
-        if (std::count(date_v.begin(), date_v.end(), '-') != 2)
-            throw std::runtime_error("Error: bad inppput.");
-
-        std::string year_v = date_v.substr(0, 4);
-        std::string month_v = date_v.substr(5, 2);
-        std::string day_v = date_v.substr(8, 2);
-
-        if (year_v < "2009" || year_v > "2022")
-            throw std::runtime_error("Error: invalid date YEAR.");
-
-        if (month_v < "01" || month_v > "12")
-            throw std::runtime_error("Error: invalid date MONTH.");
-
-        if (day_v < "01" || day_v > "30")
-            throw std::runtime_error("Error: invalid date DAY.");
-
+  
+        float value;
+        try {
+            value = std::strtof(value_v.c_str(), NULL);
+        }
+        catch (...) {
+            std::cout << "Error: bad input => " << value_v << std::endl;
+            continue;
+        }
         
-        
+        if (value < 0){
+            std::cout << "Error: not a positive number." << std::endl; 
+            continue;
+        }
 
-        //-----------------------------------------
-        if (month_v > "12")
-                throw std::runtime_error("Error: not a positive number.");
+        if (value > 1000){
+            std::cout << "Error: too large a number." << std::endl;
+            continue;
+        }    
+        
         
         std::cout << date_v <<  " => " << value_v << " = " << std::endl;
-
-        
-        
     }
 }
