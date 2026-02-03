@@ -24,7 +24,7 @@ PmergeMe::~PmergeMe() {}
 
 
 
-void PmergeMe::sort(int len, char **argv) {
+void PmergeMe::run(int len, char **argv) {
 
     for (int i = 1; i < len; i++)
     {
@@ -43,7 +43,35 @@ void PmergeMe::sort(int len, char **argv) {
             return;
         }
         _vec.push_back(static_cast<int>(value));
+        _deq.push_back(static_cast<int>(value));
     }
 
+    std::cout << "Before: ";
+    for (size_t i = 0; i < _vec.size(); i++)
+    {
+        std::cout << _vec[i] << " ";
+    }
+    std::cout << std::endl;
+
+    clock_t startTVec = clock();
+    _sortVector(_vec);
+    clock_t endTVec = clock();
+    double timeVeq = double(endTVec - startTVec) / CLOCKS_PER_SEC * 1000000;
+
+    clock_t startTDeq = clock();
+    _sortDeque(_deq);
+    clock_t endTDeq = clock();
+    double timeDeq = double(endTDeq - startTDeq) / CLOCKS_PER_SEC * 1000000;
+
+
+    std::cout << "After: ";
+    for (size_t i = 0; i < _vec.size(); i++)
+    {
+        std::cout << _vec[i] << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << timeVeq << " us" << std::endl;
+    std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << timeDeq << " us" << std::endl;
     
 }
