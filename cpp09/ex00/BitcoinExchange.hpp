@@ -1,3 +1,6 @@
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
 #include <map>
 #include <string>
 #include <iostream>
@@ -17,3 +20,5 @@ class BitcoinExchange {
     void pocessInput(const std::string& filename);
 
 };
+
+#endif

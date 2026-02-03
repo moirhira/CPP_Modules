@@ -1,3 +1,6 @@
+#ifndef RPN_HPP
+#define RPN_HPP
+
 #include <stack>
 #include <string>
 #include <iostream>
@@ -14,3 +17,4 @@ class RPN {
     static void calculte(const std::string& expression);
 };
 
+#endif

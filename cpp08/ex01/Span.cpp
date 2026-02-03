@@ -46,7 +46,7 @@ int Span::shortestSpan() {
 
     int shortest = sorted[1] - sorted[0];
 
-    for (size_t i = 1; i < sorted.size() - 1; ++i)
+    for (size_t i = 1; i < sorted.size() - 1; i++)
     {
         int cur = sorted[i + 1] - sorted[i]; 
         if (cur < shortest)

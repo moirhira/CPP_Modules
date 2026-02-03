@@ -4,6 +4,7 @@
 
 int main()
 {
+     std::cout << "-------Test 1--------" << std::endl;
     try
     {
 
@@ -22,6 +23,8 @@ int main()
         std::cerr << e.what() << std::endl;
     }
 
+
+    std::cout << "-------Test 2--------" << std::endl;
     try {
         Span lis(2);
         std::list<int> l;
@@ -36,12 +39,12 @@ int main()
         std::cout << "List test failed: " << e.what() << std::endl;
     }
 
-    // Test with 10,000+ numbers
+    std::cout << "-------Test 3--------" << std::endl;
     try {
         std::cout << "\nTesting with 10,000 numbers:" << std::endl;
         Span bigSpan(10000);
         std::vector<int> bigVec;
-        for (int i = 0; i < 10000; ++i)
+        for (int i = 0; i < 10000; i++)
             bigVec.push_back(i * 2);
         
         bigSpan.addRange(bigVec.begin(), bigVec.end());
