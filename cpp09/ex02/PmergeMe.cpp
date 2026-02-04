@@ -24,13 +24,86 @@ PmergeMe::~PmergeMe() {}
 
 
 
+
+
+
+void PmergeMe::_sortVector(std::vector<int> &veco){
+    if (veco.size() <= 1)
+        return;
+    
+    bool hasStraggler = false;
+    int straggler = 0;
+    if (veco.size() % 2 != 0)
+    {
+        hasStraggler = true;
+        straggler = veco.back();
+        veco.pop_back();
+    }
+
+    std::vector<std::pair<int, int> > pairs;
+    for (size_t i = 0; i< veco.size(); i += 2)
+    {
+        if (veco[i] > veco[i + 1])
+            pairs.push_back(std::make_pair(veco[i], veco[i + 1]));
+        else
+            pairs.push_back(std::make_pair(veco[i + 1], veco[i]));
+    }
+
+    std::vector<int> mainChain;
+    for (size_t i = 0; i < pairs.size(); ++i){
+        mainChain.push_back(pairs[i].first);
+    }
+
+    _sortVector(mainChain);
+
+    std::vector<int> pendChain;
+
+    std::vector<std::pair<int, int> > tempPairs = pairs;
+    for (size_t i = 0; i< mainChain.size(); ++i)
+    {
+        for (size_t j = 0; j < tempPairs.size(); ++j)
+        {
+            if (tempPairs[j].first == mainChain[i])
+            {
+                pendChain.push_back(tempPairs[j].second);
+                tempPairs.erase(tempPairs.begin() + j);
+                break;
+            }
+        }
+    }
+
+    mainChain.insert(mainChain.begin(), pendChain[0]);
+
+    // std::vector<int> jacop = gene
+
+    
+    
+    if (hasStraggler)
+        std::cout << straggler << std::endl;
+}
+
+
+
+
+
+
+
+
+void PmergeMe::_sortDeque(std::deque<int> &deqo){
+    (void)deqo;
+}
+
+
+
+
+
 void PmergeMe::run(int len, char **argv) {
 
     for (int i = 1; i < len; i++)
     {
         std::string arg = argv[i];
 
-        if (arg.find_first_not_of("012345679") != std::string::npos)
+        if (arg.find_first_not_of("0123456789") != std::string::npos)
         {
             std::cerr << "Error: Invalid character found." << std::endl;
             return;
@@ -47,10 +120,17 @@ void PmergeMe::run(int len, char **argv) {
     }
 
     std::cout << "Before: ";
-    for (size_t i = 0; i < _vec.size(); i++)
+    int printlimit;
+    if (_vec.size() > 5)
+        printlimit = 5;
+    else
+        printlimit = _vec.size();
+    for (int i = 0; i < printlimit; i++)
     {
         std::cout << _vec[i] << " ";
     }
+    if (_vec.size() > 5)
+        std::cout << "[...]";
     std::cout << std::endl;
 
     clock_t startTVec = clock();
@@ -65,10 +145,12 @@ void PmergeMe::run(int len, char **argv) {
 
 
     std::cout << "After: ";
-    for (size_t i = 0; i < _vec.size(); i++)
+    for (int i = 0; i < printlimit; i++)
     {
         std::cout << _vec[i] << " ";
     }
+    if (_vec.size() > 5)
+        std::cout << "[...]";
     std::cout << std::endl;
 
     std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << timeVeq << " us" << std::endl;

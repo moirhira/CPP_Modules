@@ -11,4 +11,6 @@ int main(int ac, char **av)
     }
     PmergeMe sorter;
     sorter.run(ac, av);
+    
+    return 0;
 }
