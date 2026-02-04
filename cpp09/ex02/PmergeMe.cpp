@@ -26,19 +26,19 @@ PmergeMe::~PmergeMe() {}
 
 
 static std::vector<int> generateJacobsthal(int n) {
-    std::vector<int> jacop;
-    jacop.push_back(0);
-    jacop.push_back(1);
+    std::vector<int> jacob;
+    jacob.push_back(0);
+    jacob.push_back(1);
     int prev = 1;
     int curr = 1;
     while (curr < n) {
-        jacop.push_back(curr);
+        jacob.push_back(curr);
         int next = curr + 2 * prev;
         prev = curr;
         curr = next;
     }
-    jacop.push_back(curr);
-    return jacop;
+    jacob.push_back(curr);
+    return jacob;
 }
 
 
@@ -64,15 +64,15 @@ void PmergeMe::_sortVector(std::vector<int> &veco){
             pairs.push_back(std::make_pair(veco[i + 1], veco[i]));
     }
 
+
     std::vector<int> mainChain;
     for (size_t i = 0; i < pairs.size(); ++i){
         mainChain.push_back(pairs[i].first);
     }
-
     _sortVector(mainChain);
 
-    std::vector<int> pendChain;
 
+    std::vector<int> pendChain;
     std::vector<std::pair<int, int> > tempPairs = pairs;
     for (size_t i = 0; i< mainChain.size(); ++i)
     {
@@ -87,18 +87,39 @@ void PmergeMe::_sortVector(std::vector<int> &veco){
         }
     }
 
+
     mainChain.insert(mainChain.begin(), pendChain[0]);
 
-    std::vector<int> jacop = generateJacobsthal(pendChain.size());
+    std::vector<int> jacob = generateJacobsthal(pendChain.size());
 
-    for (size_t i = 0; i < jacop.size(); i++)
-    {
-        std::cout << jacop[i] << " ";
+    size_t k = 3;
+
+    while (k < jacob.size()) {
+        size_t cur_jacob = jacob[k];
+        size_t prev_jacob = jacob[k - 1];
+
+        if (cur_jacob >= pendChain.size())
+            cur_jacob = pendChain.size();
+        
+        for (size_t i = cur_jacob; i > prev_jacob; --i) {
+            if (i -1 >= pendChain.size())
+                continue;
+            int val = pendChain[i - 1];
+
+            std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), val);
+            mainChain.insert(pos, val);
+        }
+        k++;
+        if (cur_jacob == pendChain.size())
+            break;
     }
-    
-    
+
     if (hasStraggler)
-        std::cout << straggler << std::endl;
+    {
+        std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+        mainChain.insert(pos, straggler);
+    }
+    veco = mainChain;
 }
 
 
