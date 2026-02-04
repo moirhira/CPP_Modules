@@ -125,15 +125,85 @@ void PmergeMe::_sortVector(std::vector<int> &veco){
 
 
 
-
-
-
-
 void PmergeMe::_sortDeque(std::deque<int> &deqo){
-    (void)deqo;
+    if (deqo.size() <= 1)
+        return;
+    
+    bool hasStraggler = false;
+    int straggler = 0;
+    if (deqo.size() % 2 != 0)
+    {
+        hasStraggler = true;
+        straggler = deqo.back();
+        deqo.pop_back();
+    }
+
+    std::deque<std::pair<int, int> > pairs;
+    for (size_t i = 0; i< deqo.size(); i += 2)
+    {
+        if (deqo[i] > deqo[i + 1])
+            pairs.push_back(std::make_pair(deqo[i], deqo[i + 1]));
+        else
+            pairs.push_back(std::make_pair(deqo[i + 1], deqo[i]));
+    }
+
+
+    std::deque<int> mainChain;
+    for (size_t i = 0; i < pairs.size(); ++i){
+        mainChain.push_back(pairs[i].first);
+    }
+    _sortDeque(mainChain);
+
+
+    std::deque<int> pendChain;
+    std::deque<std::pair<int, int> > tempPairs = pairs;
+    for (size_t i = 0; i< mainChain.size(); ++i)
+    {
+        for (size_t j = 0; j < tempPairs.size(); ++j)
+        {
+            if (tempPairs[j].first == mainChain[i])
+            {
+                pendChain.push_back(tempPairs[j].second);
+                tempPairs.erase(tempPairs.begin() + j);
+                break;
+            }
+        }
+    }
+
+
+    mainChain.insert(mainChain.begin(), pendChain[0]);
+
+    std::vector<int> jacob = generateJacobsthal(pendChain.size());
+
+    size_t k = 3;
+
+    while (k < jacob.size()) {
+        size_t cur_jacob = jacob[k];
+        size_t prev_jacob = jacob[k - 1];
+
+        if (cur_jacob >= pendChain.size())
+            cur_jacob = pendChain.size();
+        
+        for (size_t i = cur_jacob; i > prev_jacob; --i) {
+            if (i -1 >= pendChain.size())
+                continue;
+            int val = pendChain[i - 1];
+
+            std::deque<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), val);
+            mainChain.insert(pos, val);
+        }
+        k++;
+        if (cur_jacob == pendChain.size())
+            break;
+    }
+
+    if (hasStraggler)
+    {
+        std::deque<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+        mainChain.insert(pos, straggler);
+    }
+    deqo = mainChain;
 }
-
-
 
 
 
@@ -173,15 +243,17 @@ void PmergeMe::run(int len, char **argv) {
         std::cout << "[...]";
     std::cout << std::endl;
 
-    clock_t startTVec = clock();
-    _sortVector(_vec);
-    clock_t endTVec = clock();
-    double timeVeq = double(endTVec - startTVec) / CLOCKS_PER_SEC * 1000000;
+    
 
     clock_t startTDeq = clock();
     _sortDeque(_deq);
     clock_t endTDeq = clock();
     double timeDeq = double(endTDeq - startTDeq) / CLOCKS_PER_SEC * 1000000;
+
+    clock_t startTVec = clock();
+    _sortVector(_vec);
+    clock_t endTVec = clock();
+    double timeVeq = double(endTVec - startTVec) / CLOCKS_PER_SEC * 1000000;
 
 
     std::cout << "After: ";
