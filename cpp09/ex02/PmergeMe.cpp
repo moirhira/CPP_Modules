@@ -25,6 +25,21 @@ PmergeMe::~PmergeMe() {}
 
 
 
+static std::vector<int> generateJacobsthal(int n) {
+    std::vector<int> jacop;
+    jacop.push_back(0);
+    jacop.push_back(1);
+    int prev = 1;
+    int curr = 1;
+    while (curr < n) {
+        jacop.push_back(curr);
+        int next = curr + 2 * prev;
+        prev = curr;
+        curr = next;
+    }
+    jacop.push_back(curr);
+    return jacop;
+}
 
 
 void PmergeMe::_sortVector(std::vector<int> &veco){
@@ -74,8 +89,12 @@ void PmergeMe::_sortVector(std::vector<int> &veco){
 
     mainChain.insert(mainChain.begin(), pendChain[0]);
 
-    // std::vector<int> jacop = gene
+    std::vector<int> jacop = generateJacobsthal(pendChain.size());
 
+    for (size_t i = 0; i < jacop.size(); i++)
+    {
+        std::cout << jacop[i] << " ";
+    }
     
     
     if (hasStraggler)
