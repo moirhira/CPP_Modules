@@ -16,7 +16,6 @@ class PmergeMe {
         PmergeMe(const PmergeMe& other);
         PmergeMe& operator=(const PmergeMe& other);
         ~PmergeMe();
-        void sort(int len, char **argv);
         void _sortVector(std::vector<int> &veco);
         void _sortDeque(std::deque<int> &deqo);
         void run(int argc, char **argv);
